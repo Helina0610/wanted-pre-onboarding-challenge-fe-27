@@ -1,27 +1,25 @@
-import React from 'react'
-import { Form } from 'react-router-dom'
+import { Form } from "react-router-dom"
 
 const Login = () => {
 
-
-	const onChangeEmial = (e) => {
-		const value = e.target.value;
-		console.log(value)
-	}
-
 	return (
-		<div>
-			<Form action='/users/login' method='post'>
-				<h1>안녕하세요</h1>
-				<div>
-					이메일 : <input type="email" name="email" id="email" onChange={(e) => onChangeEmial(e)} />
-				</div>
-				<div>
-					비밀번호 : <input type="password" name="password" id="password" />
-				</div>
-				<button type="submit">로그인</button>
-			</Form>
-		</div>
+		<div className="login-container">
+		<Form className="login-form">
+			<h2>로그인</h2>
+			<div className="input-group">
+				<label htmlFor="username">아이디</label>
+				<input type="text" id="username" name="username" required />
+			</div>
+			<div className="input-group">
+				<label htmlFor="password">비밀번호</label>
+				<input type="password" id="password" name="password" required />
+			</div>
+			<button type="submit">로그인</button>
+			<p className="register-text">
+				계정이 없으신가요? <a href="#">회원가입</a>
+			</p>
+		</Form>
+	</div>
 	)
 }
 
